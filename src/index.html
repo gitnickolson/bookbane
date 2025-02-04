@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to Bookbane</title>
+    <link rel="stylesheet" href="styles/common_styles.css" />
 </head>
 <body>
 <div class="introduction_block"><h1>Welcome to Bookbane!</h1>
@@ -29,13 +30,13 @@
     <h2>Add a custom book with specified details</h2>
     <form action="https://httpbin.org/post" method="post">
         <label for="custom_title_field">Book title*</label>
-        <input type="text" id="custom_title_field" name="title" placeholder="Enter book title here" required>
+        <input type="text" id="custom_title_field" name="title" placeholder="Enter book title here" maxlength="80" required>
 
         <label for="custom_author_field">Author*</label>
-        <input type="text" id="custom_author_field" name="author" placeholder="Enter book author here" required>
+        <input type="text" id="custom_author_field" name="author" placeholder="Enter book author here" maxlength="30" required>
 
         <label for="custom_pages_field">Pages count*</label>
-        <input type="number" id="custom_pages_field" name="pages" placeholder="Enter the number of pages here" required>
+        <input type="number" id="custom_pages_field" name="pages" placeholder="Enter the number of pages here" max="500000" required>
 
         <label for="custom_written_field">Date written</label>
         <input type="date" id="custom_written_field" name="written">
@@ -45,6 +46,10 @@
 
         <button type="submit" class="add_custom_book_button">Add book to collection :)</button>
     </form>
+</div>
+
+<div class="book_list">
+
 </div>
 <script src="scripts/something.js"></script>
 </body>

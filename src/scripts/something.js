@@ -8,24 +8,44 @@ function Book(title, author, pages, read, written = null) {
     this.read = read;
     this.written = written;
     this.dateAdded = date.toISOString();
-    this.info = () => { `${this.title} by ${this.author}.
-    ${this.pages} pages${this.written ? `, written in ${this.written}.` : "."}" + 
-    "${this.read ? "You have read this book." : "You have not read this book." +
-        `Entry added: ${this.dateAdded}`}`};
-}
+    this.info = () => {
+        return `${this.title} by ${this.author}.
+${this.pages} pages${this.written ? `, written: ${this.written}.` : "."}
+${this.read ? "You have read this book." :  "You have not read this book." }
 
-function addBook(title) {
-
+Entry added: ${this.dateAdded}`;
+    };
 }
 
 function addCustomBook(title, author, pages, read, written) {
     const book = new Book(title, author, pages, read, written);
     library.push(book);
-    console.log(book)
+    visualizeNewBook(book);
 }
 
-for(let i = 0; i < 10; i++) {
-    addCustomBook(`test${i}`, "kek", i, true);
+
+function visualizeNewBook(book) {
+    const bookList = document.querySelector(".book_list");
+    console.log(bookList)
+
+    const newP = document.createElement('p');
+    newP.classList.add('book_item');
+    newP.textContent = book.info();
+
+    bookList.appendChild(newP);
 }
 
-console.log(library)
+const customBookButton = document.querySelector(".add_custom_book_button")
+customBookButton.addEventListener("click", buttonClick, false)
+
+function buttonClick(event) {
+    event.preventDefault();
+    console.log(event)
+    const form = event.target.form
+    const title = form[0].value
+    const author = form[1].value
+    const pages = form[2].value
+    const written = form[3].value
+    const read = form[4].checked
+    addCustomBook(title, author, pages,  read, written)
+}
