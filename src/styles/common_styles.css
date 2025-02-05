@@ -1,0 +1,224 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+.introduction-block {
+    position: sticky;
+    top: 0;
+    background-color: seashell;
+    text-align: center;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 1px;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    vertical-align: top;
+    border-bottom: 10px solid #fff1ee;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    height: 7em;
+}
+
+.introduction-caption {
+    font-size: 1em;
+}
+
+h1 {
+    margin: 0;
+    padding-top: 1em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+    width: 100vw;
+    height: 50vh;
+}
+
+.book-forms {
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 8px;
+    margin: 1vw;
+}
+
+.book-forms label {
+    font-family: "Arial", sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    color: #555;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+.book-forms input[type="text"],
+.book-forms input[type="number"],
+.book-forms input[type="date"] {
+    padding: 0.8em;
+    margin-bottom: 1.5em;
+    width: 60%;
+    font-size: 1em;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+.book-forms input[type="text"]:focus,
+.book-forms input[type="number"]:focus,
+.book-forms input[type="date"]:focus {
+    border-color: #B3B3FF;
+    outline: none;
+}
+
+.book-forms input[type="checkbox"] {
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+}
+
+.book-forms button {
+    background-color: #C7D9C8;
+    color: #333;
+    border: none;
+    border-radius: 12px;
+    padding: 1em 2em;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1em;
+    transition: background-color 0.3s;
+}
+
+.book-forms button:hover {
+    background-color: #A7C8A4;
+}
+
+.book-forms button:active {
+    background-color: #8DAE8C;
+}
+
+.book-form {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.custom-book-form {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+.book-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 2px solid #E5DFF5;
+    border-radius: 15px;
+    background-color: seashell;
+    margin: 1em;
+    overflow: scroll;
+    padding: 1em;
+    min-height: 30vh;
+    max-height: 500vh;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.book-banner {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: 3fr 1fr;
+    height: 20em;
+    width: 45%;
+    margin: 1vmin 2vmin;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+.book-list > div:nth-child(3n - 3) {
+    background-color: lavender;
+}
+
+.book-list > div:nth-child(3n - 2) {
+    background: antiquewhite;
+}
+
+.book-list > div:nth-child(3n - 1){
+    background: azure;
+}
+
+.book-title {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-size: 2em;
+    font-family: "Playfair Display", serif;
+    margin-left: 2vw;
+    margin-top: 3vh;
+    justify-self: start;
+}
+
+.book-info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: 1.5em;
+    text-align: left;
+    justify-self: start;
+    margin-left: 2vw;
+    margin-bottom: 10vh;
+}
+
+.read-question {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-right: 0.8vh;
+    margin-top: 1.5vh;
+    font-size: 1.2em;
+    height: 4em;
+    width: 4em;
+    justify-self: end;
+}
+
+.read-checkbox {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-right: 3vh;
+    margin-top: 3vh;
+    height: 4vh;
+    width: 4vh;
+    justify-self: end;
+}
+
+.delete-button {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    color: white;
+    background-color: #C70000;
+    border: 0;
+    margin-right: 3vh;
+    margin-bottom: 3vh;
+    margin-top: 9vh;
+    justify-self: end;
+    height: 2em;
+    width: 4em;
+    font-size: 1.6em;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px, rgb(209, 213, 219) 0px 0px 0px 2px inset;
+}
