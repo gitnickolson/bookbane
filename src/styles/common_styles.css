@@ -1,8 +1,54 @@
+body {
+    overflow-x: hidden;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    width: 100vw;
+}
+
+.book_list {
+    display: grid;
+    grid-template-columns: 3fr 6fr 1fr;
+    border: 12px dashed steelblue;
+    border-radius: 15px;
+    background-color: lightskyblue;
+    margin: 1em;
+    text-align: center;
+    overflow: scroll;
+    max-height: 200vh;
+    padding: 1em;
+}
+
+
 .book_item {
-    border: 3px solid seashell;
-margin: 2vh;
-padding:  1em;
-height:  1vh;
-width:  70vw;
-fontSize:  1em;
+    border: 5px solid seashell;
+    border-radius: 30px;
+    background-color: #FFEE8C;
+    padding: 1em;
+    margin: 0.5em;
+    height: 1em;
+    font-size: 2vmin;
+}
+
+.book_info_item {
+    border: 5px solid #FFEE8C;
+    border-radius: 10px;
+    background-color: #b4d3b2;
+    padding: 1.3em;
+    margin: 0.5em;
+    height: 1em;
+    font-size: 1.7vmin;
+    text-align: left;
+}
+
+.delete_button {
+    border: 5px solid red;
+    border-radius: 30px;
+    background-color: #1F3B4D;
+    color: red;
+    margin: 0.5em;
+    height: 3em;
+    font-size: 2vmin;
 }
