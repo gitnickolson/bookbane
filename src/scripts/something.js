@@ -110,8 +110,77 @@ function findButtonIndex(event) {
 const customBookButton = document.querySelector(".add-custom-book-button")
 customBookButton.addEventListener("click", submitButtonClick, false)
 
+const customTitleField = document.querySelector("#custom-title-field");
+customTitleField.addEventListener("input", (event) => {
+    customTitleField.style.borderColor = "grey"
+    customTitleField.setCustomValidity("");
+
+    if (!customTitleField.validity.valid) {
+        customTitleField.setCustomValidity("Kaputt");
+        customTitleField.style.borderColor = "red"
+    }
+});
+
+
+const customAuthorField = document.querySelector("#custom-author-field");
+customAuthorField.addEventListener("input", (event) => {
+    customAuthorField.style.borderColor = "grey"
+    customAuthorField.setCustomValidity("");
+
+    if (!customAuthorField.validity.valid) {
+        customAuthorField.setCustomValidity("Kaputt");
+        customAuthorField.style.borderColor = "red"
+    }
+});
+
+const customPagesField = document.querySelector("#custom-pages-field");
+customPagesField.addEventListener("input", (event) => {
+    customPagesField.style.borderColor = "grey"
+    customPagesField.setCustomValidity("");
+
+    if (!customPagesField.validity.valid || ((Number(customPagesField.value)) > 10000)) {
+        customPagesField.setCustomValidity("Kaputt");
+        customPagesField.style.borderColor = "red"
+    }
+});
+
+const customDateField = document.querySelector("#custom-written-field");
+customDateField.addEventListener("input", (event) => {
+    customDateField.style.borderColor = "grey"
+    customDateField.setCustomValidity("");
+
+    if (!customDateField.validity.valid) {
+        customDateField.setCustomValidity("Kaputt");
+        customDateField.style.borderColor = "red"
+    }
+});
+
 function submitButtonClick(event) {
     event.preventDefault();
+
+    if (!customTitleField.validity.valid) {
+        console.log(customTitleField.validity)
+        customTitleField.reportValidity();
+        return;
+    }
+
+    if (!customAuthorField.validity.valid) {
+        console.log(customAuthorField.validity)
+        customAuthorField.reportValidity();
+        return;
+    }
+
+    if (!customPagesField.validity.valid) {
+        console.log(customPagesField.validity)
+        customPagesField.reportValidity();
+        return;
+    }
+
+    if (!customDateField.validity.valid) {
+        console.log(customDateField.validity)
+        customDateField.reportValidity();
+        return;
+    }
 
     const form = event.target.form
     const title = form[0].value;
@@ -122,3 +191,5 @@ function submitButtonClick(event) {
 
     addCustomBook(title, author, pages, read, written);
 }
+
+
