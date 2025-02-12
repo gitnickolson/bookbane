@@ -123,6 +123,7 @@ customTitleField.addEventListener("input", (event) => {
 
 
 const customAuthorField = document.querySelector("#custom-author-field");
+
 customAuthorField.addEventListener("input", (event) => {
     customAuthorField.style.borderColor = "grey"
     customAuthorField.setCustomValidity("");
@@ -191,5 +192,3 @@ function submitButtonClick(event) {
 
     addCustomBook(title, author, pages, read, written);
 }
-
-
